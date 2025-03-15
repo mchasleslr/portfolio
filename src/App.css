@@ -1,3 +1,21 @@
 #root {
   max-width: 1280px;
+
+  height: 100vh;
+
+  background: radial-gradient(
+    75vh at top,
+    rgba(0, 0, 0, 0.1) 0%,
+    var(--color-background-secondary) 50%
+  );
+  padding: 0 2rem;
+}
+
+.header_description {
+  color: var(--color-text-secondary);
+  font-family: var(--font-primary);
+  font-size: 1.75rem;
+  font-style: normal;
+  font-weight: var(--font-weight-normal);
+  line-height: 150%;
 }

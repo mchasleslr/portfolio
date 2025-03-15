@@ -8,7 +8,32 @@
 }
 
 :root {
-  --font-primary: "inter", sans-serif;
+  --mobile: 768px;
+  --tablet: 1024px;
+  --desktop: 1280px;
+
+  --color-background-primary: rgb(10, 47, 38);
+
+  --color-background-secondary: rgb(0, 0, 0);
+
+  --color-background-tertiary-500: rgb(33, 33, 33, 0.5);
+  --color-background-tertiary: rgb(33, 33, 33);
+
+  --color-text-primary: #ffffff;
+
+  --color-text-secondary-100: rgba(153, 153, 153, 0.1);
+  --color-text-secondary: #999999;
+
+  --font-primary: "inter", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --font-size-header-1-mobile: 4.5rem;
+  --font-size-header-1-tablet: 6rem;
+  --font-size-header-1-desktop: 7.5rem;
+
+  --font-weight-normal: 400;
+  --font-weight-semibold: 600;
+  --font-weight-black: 900;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -16,12 +41,45 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  background-image: repeating-linear-gradient(
+      90deg,
+      var(--color-background-tertiary) 0px,
+      var(--color-background-tertiary) 1px,
+      transparent 1px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      var(--color-background-primary) 0px,
+      var(--color-background-primary) 5px,
+      transparent 5px,
+      transparent 6px
+    ),
+    linear-gradient(
+      90deg,
+      var(--color-background-tertiary),
+      var(--color-background-tertiary)
+    );
+}
+
 h1 {
-  color: #000;
+  color: var(--color-text-primary);
   font-family: var(--font-primary);
-  font-size: 64px;
+  font-size: var(--font-size-header-1-mobile);
   font-style: normal;
-  font-weight: 900;
-  line-height: 60px; /* 93.75% */
-  letter-spacing: -3.84px;
+  font-weight: var(--font-weight-black);
+  line-height: 120%; /* 93.75% */
+  letter-spacing: -2.25px;
+  margin-bottom: 2rem;
+}
+
+em {
+  border: 1px solid var(--color-text-secondary-100);
+  font-style: normal;
+  backdrop-filter: blur(1px);
+  background-color: var(--color-background-tertiary-500);
+  border-radius: 4px;
+  font-size: inherit;
+  padding-inline: 2px;
 }
