@@ -2,9 +2,12 @@ import { useEffect } from "react";
 import "./App.css";
 import CustomButton from "./components/CustomButton/CustomButton";
 import CustomCard from "./components/CustomCard/CustomCard";
-import { FaGithub, FaGitlab, FaLinkedinIn } from "react-icons/fa";
+import { FaFileAlt, FaGithub, FaGitlab, FaLinkedinIn } from "react-icons/fa";
+import { IoPersonCircleSharp } from "react-icons/io5";
+import { RiContactsBook2Line } from "react-icons/ri";
 import { IoMdMail } from "react-icons/io";
 import IconsList from "./components/IconsList/IconsList";
+import Navigation from "./components/Navigation/Navigation";
 
 function App() {
   const projects = [
@@ -104,7 +107,6 @@ function App() {
       tags: ["motivation", "réinvention", "apprentissage"],
     },
   ];
-
   const socials = [
     {
       url: "https://www.linkedin.com/in/maxime-chasles-bb102328a/",
@@ -121,6 +123,24 @@ function App() {
     {
       url: "mailto:mchasles@etudiant.univ-lr.fr",
       icon: IoMdMail,
+    },
+  ];
+
+  const menu = [
+    {
+      title: "Projets",
+      url: "#",
+      icon: FaFileAlt,
+    },
+    {
+      title: "À propos",
+      url: "#",
+      icon: IoPersonCircleSharp,
+    },
+    {
+      title: "Contact",
+      url: "#",
+      icon: RiContactsBook2Line,
     },
   ];
 
@@ -161,6 +181,7 @@ function App() {
   return (
     <>
       <header>
+        <Navigation homeBtn links={menu} />
         <div className="header__hero">
           <h1 className="header_title">Développeur Web en devenir</h1>
           <p className="header_description">

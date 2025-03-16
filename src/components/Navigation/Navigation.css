@@ -1,0 +1,25 @@
+.navigation {
+  position: fixed;
+  bottom: 2rem;
+  display: flex;
+  padding: 4px 6px;
+  gap: 6px;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--color-accent-300);
+  border-radius: 12px;
+  backdrop-filter: blur(3px);
+  background-color: var(--color-secondary-800);
+  z-index: 1000;
+}
+
+.navigation__home {
+  border-right: 1px solid var(--color-accent-300);
+  padding-inline-end: 6px;
+}
+
+.navigation__links {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
