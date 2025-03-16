@@ -27,7 +27,7 @@ export default function IconsList({
           key={index}
           onClick={clickables?.find((i) => i === index) ? onClick : undefined}
         >
-          <a id={icon.id ? icon.id : ""} href={icon.url}>
+          <a id={icon.id ? icon.id : ""} href={icon.url} target="_blank">
             <icon.icon
               id={icon.id ? icon.id : ""}
               className="icons-list__vector"

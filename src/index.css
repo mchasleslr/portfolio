@@ -212,6 +212,11 @@ button {
   }
 }
 
+.invisible {
+  visibility: hidden;
+  opacity: 0;
+}
+
 ul,
 ol {
   list-style: none;

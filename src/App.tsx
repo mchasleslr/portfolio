@@ -11,11 +11,12 @@ import Navigation from "./components/Navigation/Navigation";
 
 function App() {
   const initEggs = () => {
-    return [false, false];
+    return [false, false, false];
   };
-  const [eggFound, setEggFound] = useState(initEggs);
 
+  const [eggFound, setEggFound] = useState(initEggs);
   const [revealBackground, setRevealBackground] = useState(false);
+  const [revealCode, setRevealCode] = useState(false);
 
   const projects = [
     {
@@ -119,11 +120,7 @@ function App() {
       url: "https://www.linkedin.com/in/maxime-chasles-bb102328a/",
       icon: FaLinkedinIn,
     },
-    {
-      id: "22072806a0",
-      url: "https://github.com/mchasleslr",
-      icon: FaGithub,
-    },
+
     {
       url: "https://gitlab.univ-lr.fr/mchasles",
       icon: FaGitlab,
@@ -131,6 +128,11 @@ function App() {
     {
       url: "mailto:mchasles@etudiant.univ-lr.fr",
       icon: IoMdMail,
+    },
+    {
+      id: "2207280",
+      url: "https://github.com/mchasleslr",
+      icon: FaGithub,
     },
   ];
   const menu = [
@@ -153,24 +155,33 @@ function App() {
 
   const easterEggs = [
     {
-      id: "b513a2cf1p",
+      id: "b513a2c",
       title: "Background",
       message:
         "Bonjour et bienvenue sur mon portfolio !\n\nPour rendre l'expérience plus immersive, j'y ai ajouté quelques easter eggs.\n\nFélicitation vous avez trouvé le premier 🥚 ! Vous devriez remarquer que quelque chose a changé...\n\nLa lumière vous donnera le prochain indice...\n\nÀ vous de jouer !\n\n🔦\n\nPS: si vous êtes sur mobile ou tablette, le tactile est votre ami.",
       action: function () {
         alert(this.message);
         setRevealBackground(true);
-        setEggFound([true, false]);
+        setEggFound([true, false, false]);
+      },
+    },
+
+    {
+      id: "2207280",
+      title: "Octocat",
+      message:
+        "Bravo, vous avez trouvé le deuxième easter egg ! Vous avez l'oeil 👀.\n\nIl y a un CODE caché quelque part sur cette page, il vous mènera au dernier 🥚 ...\n\nÀ vous de jouer !\n\nUn indice : c'est le moment de faire un petit tour sur Github 😉 !",
+      action: function () {
+        alert(this.message);
+        setEggFound([true, true, false]);
       },
     },
     {
-      id: "22072806a0",
-      title: "Octocat",
-      message:
-        "Bravo, vous avez trouvé le deuxième easter egg ! Vous avez l'oeil 👀.\n\nIl y a un CODE caché quelque part sur cette page, il vous donnera le hash du commit dans lequel je vous donne le prochain indice...\n\nÀ vous de jouer !\n\nAh et pendant que vous y êtes, profitez en pour faire un petit tour sur mon Github 😉 !",
+      id: "4061790",
+      title: "Code",
       action: function () {
-        alert(this.message);
-        setEggFound([true, true]);
+        setEggFound([true, true, true]);
+        setRevealCode(true);
       },
     },
   ];
@@ -210,8 +221,7 @@ function App() {
 
   const handleEasterEgg = (e: any) => {
     e.preventDefault();
-    console.log("Find an easter egg !");
-    console.log(e.target);
+    console.log("Found an easter egg !");
     console.log(e.target.id);
     const easterEgg = easterEggs.find((egg) => egg.id === e.target.id);
     if (easterEgg) {
@@ -227,7 +237,7 @@ function App() {
           <h1 className="header_title">Développeur Web en devenir</h1>
           <p className="header_description">
             Moi c’est{" "}
-            <em id="b513a2cf1p" onClick={handleEasterEgg}>
+            <em id="b513a2c" onClick={handleEasterEgg}>
               Maxime
             </em>
             , étudiant en informatique à La Rochelle Université. Ancien barman
@@ -272,7 +282,13 @@ function App() {
         </section>
         <section className="madskills">
           <h2 className="madskills__header">
-            Beyond the <code>code</code>
+            Beyond the{" "}
+            <code
+              id="4061790"
+              onClick={eggFound[1] ? handleEasterEgg : undefined}
+            >
+              {revealCode ? 4061790 : "code"}
+            </code>
           </h2>
           <p className="madskills__description">
             Certaines expériences personnelles ont fortement contribué à
@@ -296,6 +312,12 @@ function App() {
         </section>
       </main>
       <footer className="footer">
+        <div
+          className={`hidden_layout ${
+            !eggFound[0] || eggFound[1] ? "invisible" : ""
+          }`}
+        ></div>
+
         {!eggFound[0] || eggFound[1] ? (
           <IconsList list={socials} className="footer__socials" />
         ) : (
@@ -303,7 +325,7 @@ function App() {
             list={socials}
             onClick={handleEasterEgg}
             className="footer__socials"
-            clickables={[1]}
+            clickables={[3]}
           />
         )}
         <p className="footer__text">

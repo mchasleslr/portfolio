@@ -8,6 +8,19 @@
   padding: 3rem 2rem 6rem 2rem;
 }
 
+.hidden_layout {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  background-image: url("octocat.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
 .header_title {
   line-height: 120%;
   letter-spacing: -2.25px;
@@ -77,6 +90,7 @@
 }
 
 .footer {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
