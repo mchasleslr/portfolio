@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import CustomButton from "./components/CustomButton/CustomButton";
 import CustomCard from "./components/CustomCard/CustomCard";
@@ -10,6 +10,13 @@ import IconsList from "./components/IconsList/IconsList";
 import Navigation from "./components/Navigation/Navigation";
 
 function App() {
+  const initEggs = () => {
+    return [false, false];
+  };
+  const [eggFound, setEggFound] = useState(initEggs);
+
+  const [revealBackground, setRevealBackground] = useState(false);
+
   const projects = [
     {
       title: "portfolio",
@@ -113,6 +120,7 @@ function App() {
       icon: FaLinkedinIn,
     },
     {
+      id: "98093207f6",
       url: "https://github.com/mchasleslr",
       icon: FaGithub,
     },
@@ -125,7 +133,6 @@ function App() {
       icon: IoMdMail,
     },
   ];
-
   const menu = [
     {
       title: "Projets",
@@ -144,20 +151,42 @@ function App() {
     },
   ];
 
+  const easterEggs = [
+    {
+      id: "b513a2cf1p",
+      title: "Background",
+      message:
+        "Bonjour et bienvenue sur mon portfolio !\n\nPour rendre l'expérience plus immersive, j'y ai ajouté quelques easter eggs.\n\nFélicitation vous avez trouvé le premier 🥚 ! Vous devriez remarquer que quelque chose a changé...\n\nLa lumière vous donnera le prochain indice...\n\nÀ vous de jouer !\n\n🔦\n\nPS: si vous êtes sur mobile ou tablette, le tactile est votre ami.",
+      action: function () {
+        alert(this.message);
+        setRevealBackground(true);
+        setEggFound([true, false]);
+      },
+    },
+    {
+      id: "98093207f6",
+      title: "Octocat",
+      message:
+        "Bravo, vous avez trouvé le deuxième easter egg ! Vous avez l'oeil 👀.\n\nIl y a un CODE caché quelque part sur cette page, il vous donnera le hash du commit dans lequel je vous donne le prochain indice...\n\nÀ vous de jouer !\n\nAh et pendant que vous y êtes, profitez en pour faire un petit tour sur mon Github 😉 !",
+      action: function () {
+        alert(this.message);
+        setEggFound([true, true]);
+      },
+    },
+  ];
+
   useEffect(() => {
     let targetX = 0;
     let targetY = 0;
     let currentX = 0;
     let currentY = 0;
 
-    const speed = 0.05; // vitesse d'interpolation (plus petit = plus lent)
+    const speed = 0.05;
 
     const update = () => {
-      // interpolation linéaire vers la cible
       currentX += (targetX - currentX) * speed;
       currentY += (targetY - currentY) * speed;
 
-      // on met à jour les variables CSS
       document.documentElement.style.setProperty("--mouse-x", `${currentX}px`);
       document.documentElement.style.setProperty("--mouse-y", `${currentY}px`);
 
@@ -169,14 +198,26 @@ function App() {
       targetY = e.pageY;
     };
 
-    document.addEventListener("mousemove", handleMouseMove);
-
-    update(); // démarre la boucle d’animation
+    if (revealBackground) {
+      document.addEventListener("mousemove", handleMouseMove);
+      update();
+    }
 
     return () => {
       document.removeEventListener("mousemove", handleMouseMove);
     };
-  }, []);
+  }, [revealBackground]);
+
+  const handleEasterEgg = (e: any) => {
+    e.preventDefault();
+    console.log("Find an easter egg !");
+    console.log(e.target);
+    console.log(e.target.id);
+    const easterEgg = easterEggs.find((egg) => egg.id === e.target.id);
+    if (easterEgg) {
+      easterEgg.action();
+    }
+  };
 
   return (
     <>
@@ -185,9 +226,13 @@ function App() {
         <div className="header__hero">
           <h1 className="header_title">Développeur Web en devenir</h1>
           <p className="header_description">
-            Moi c’est <em>Maxime</em>, étudiant en informatique à La Rochelle
-            Université. Ancien barman passionné par l’art du service, je me
-            réinvente aujourd’hui dans le développement Web.
+            Moi c’est{" "}
+            <em id="b513a2cf1p" onClick={handleEasterEgg}>
+              Maxime
+            </em>
+            , étudiant en informatique à La Rochelle Université. Ancien barman
+            passionné par l’art du service, je me réinvente aujourd’hui dans le
+            développement Web.
           </p>
           <div className="header__cta-container">
             <CustomButton
@@ -251,7 +296,16 @@ function App() {
         </section>
       </main>
       <footer className="footer">
-        <IconsList list={socials} className="footer__socials" />
+        {!eggFound[0] || eggFound[1] ? (
+          <IconsList list={socials} className="footer__socials" />
+        ) : (
+          <IconsList
+            list={socials}
+            onClick={handleEasterEgg}
+            className="footer__socials"
+            clickables={[1]}
+          />
+        )}
         <p className="footer__text">
           © {new Date().getFullYear()} Maxime CHASLES. Tous droits réservés.
         </p>

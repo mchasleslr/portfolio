@@ -1,13 +1,11 @@
 #root {
-  /* height: 100vh; */
-
   background: radial-gradient(
     75vh at var(--mouse-x) var(--mouse-y),
     var(--color-primary-700) 0%,
     var(--color-primary) 75%
   );
 
-  padding: 6rem 2rem;
+  padding: 3rem 2rem 6rem 2rem;
 }
 
 .header_title {
@@ -25,6 +23,7 @@
 }
 
 .header_description {
+  position: relative;
   color: var(--color-text-700);
   font-family: var(--font-primary);
   font-size: 1.75rem;
