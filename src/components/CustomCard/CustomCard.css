@@ -11,15 +11,16 @@
   transition: all 0.3s;
   border: 1px solid var(--color-accent-100);
   font-family: var(--font-primary);
-  padding: 1.5rem 3rem;
+  padding: 1.5rem;
 }
 
 .card__thumbnail {
   display: block;
-  height: 80px;
+  height: 100px;
   width: 100%;
   border-radius: 10px;
   object-fit: cover;
+  margin-bottom: 1.5rem;
 }
 
 .card__meta {
@@ -97,7 +98,7 @@
   font-size: 1rem;
   font-weight: var(--font-weight-normal);
   color: var(--color-text-700);
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .card__tags {

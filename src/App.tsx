@@ -63,6 +63,44 @@ function App() {
       ],
     },
   ];
+  const events = [
+    {
+      year: "2016",
+      title: "Road trip - Australia",
+      description:
+        "Immersion dans un nouvel environnement culturel. Cette expérience a renforcé mon adaptabilité, mon ouverture d'esprit et mon autonomie.",
+      icon: "🦘",
+      thumbnail: "australia.jpg",
+      tags: ["adaptabilité", "autonomie", "anglais"],
+    },
+    {
+      year: "2019",
+      title: "Bikepacking - From La Rochelle to Corsica",
+      description:
+        "Défi sportif en. Un voyage de plusieurs semaines qui m’a appris la persévérance, la discipline et la gestion de l'imprévu.",
+      icon: "🚴‍♂️",
+      thumbnail: "biketrip.jpg",
+      tags: ["endurance", "persévérance", "adaptabilité"],
+    },
+    {
+      year: "2021–2022",
+      title: "42.195 km - Marathon de La Rochelle",
+      description:
+        "Objectifs atteints grâce à une préparation rigoureuse. Ces épreuves ont consolidé ma rigueur, ma constance et ma capacité mentale à aller jusqu’au bout.",
+      icon: "🏃",
+      thumbnail: "marathon.jpg",
+      tags: ["rigueur", "constance", "discipline"],
+    },
+    {
+      year: "2023",
+      title: "Nouvel élan - Reprise d'études",
+      description:
+        "Un engagement fort vers une nouvelle voie professionnelle. Ce choix témoigne de ma motivation, de ma capacité à me réinventer et de ma volonté d'apprendre.",
+      icon: "🎓",
+      thumbnail: "university.jpg",
+      tags: ["motivation", "réinvention", "apprentissage"],
+    },
+  ];
 
   useEffect(() => {
     let targetX = 0;
@@ -90,6 +128,7 @@ function App() {
     };
 
     document.addEventListener("mousemove", handleMouseMove);
+
     update(); // démarre la boucle d’animation
 
     return () => {
@@ -122,8 +161,8 @@ function App() {
       </header>
       <main>
         <section className="showcase">
-          <div className="showcase__header">
-            <h2 className="showcase__title">Showcase</h2>
+          <div className="showcase__header-container">
+            <h2 className="showcase__header">Showcase</h2>
             <p className="showcase__description">
               Une sélection parmi mes projets personnels et académiques.
             </p>
@@ -135,7 +174,6 @@ function App() {
                 key={index}
                 title={project.title}
                 description={project.description}
-                // thumbnail={project.thumbnail}
                 date={project.date}
                 tags={project.tags}
                 status={project.status}
@@ -144,9 +182,29 @@ function App() {
             ))}
           </div>
         </section>
-        <section className="timeline">
-          <h2></h2>
+        <section className="madskills">
+          <h2 className="madskills__header">
+            Beyond the <code>code</code>
+          </h2>
+          <p className="madskills__description">
+            Certaines expériences personnelles ont fortement contribué à
+            façonner mes qualités humaines et professionnelles. Voici quelques
+            exemples significatifs.
+          </p>
           <div className="separator" />
+
+          <div className="madskills__events">
+            {events.map((event, index) => (
+              <CustomCard
+                key={index}
+                title={event.title}
+                description={event.description}
+                thumbnail={event.thumbnail}
+                date={event.year}
+                tags={event.tags}
+              />
+            ))}
+          </div>
         </section>
       </main>
     </>

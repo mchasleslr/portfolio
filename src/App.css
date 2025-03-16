@@ -11,9 +11,17 @@
 }
 
 .header_title {
-  line-height: 120%; /* 93.75% */
+  line-height: 120%;
   letter-spacing: -2.25px;
   margin-bottom: 2rem;
+  background: linear-gradient(
+    0deg,
+    var(--color-text-700) 0%,
+    var(--color-text) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .header_description {
@@ -26,19 +34,22 @@
   margin-bottom: 2rem;
 }
 
-.showcase__projects {
+.showcase__projects,
+.madskills__events {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
   margin-bottom: 2rem;
 }
 
-.showcase__title {
+.showcase__header,
+.madskills__header {
   line-height: 115%;
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.5rem;
 }
 
-.showcase__description {
+.showcase__description,
+.madskills__description {
   color: var(--color-text-700);
   font-family: var(--font-primary);
   font-size: 1.25rem;
@@ -65,3 +76,22 @@
   color: var(--color-text-800);
   cursor: default;
 }
+
+/* .madskills__event {
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.madskills__year {
+  font-size: 1.25rem;
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-800);
+}
+
+.madskills__title {
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  line-height: 115%;
+  margin-bottom: 1.5rem;
+} */

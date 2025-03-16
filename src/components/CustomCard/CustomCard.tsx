@@ -15,6 +15,7 @@ type CustomCardProps = {
     origin: string;
     url: string;
   }[];
+  className?: string;
 };
 
 export default function CustomCard({
@@ -25,6 +26,7 @@ export default function CustomCard({
   tags,
   status,
   source,
+  className,
 }: CustomCardProps) {
   const renderStatus = (status: string) => {
     if (status === "completed") {
@@ -79,7 +81,7 @@ export default function CustomCard({
   };
 
   return (
-    <article className="card">
+    <article className={"card" + (className ? ` ${className}` : "")}>
       {thumbnail && (
         <img className="card__thumbnail" src={thumbnail} alt={title} />
       )}
