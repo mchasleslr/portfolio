@@ -120,7 +120,7 @@ function App() {
       icon: FaLinkedinIn,
     },
     {
-      id: "716f5b053e",
+      id: "22072806a0",
       url: "https://github.com/mchasleslr",
       icon: FaGithub,
     },
@@ -164,7 +164,7 @@ function App() {
       },
     },
     {
-      id: "716f5b053e",
+      id: "22072806a0",
       title: "Octocat",
       message:
         "Bravo, vous avez trouvé le deuxième easter egg ! Vous avez l'oeil 👀.\n\nIl y a un CODE caché quelque part sur cette page, il vous donnera le hash du commit dans lequel je vous donne le prochain indice...\n\nÀ vous de jouer !\n\nAh et pendant que vous y êtes, profitez en pour faire un petit tour sur mon Github 😉 !",
