@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   font-size: 62.5%;
+  font-style: normal;
 }
 
 :root {
@@ -12,17 +13,70 @@
   --tablet: 1024px;
   --desktop: 1280px;
 
-  --color-background-primary: rgb(10, 47, 38);
+  --mouse-x: 50%;
+  --mouse-y: 50%;
 
-  --color-background-secondary: rgb(0, 0, 0);
+  --bg-concrete: url("concrete-wall-2.png");
+  --bg-skulls: url("skulls.png");
 
-  --color-background-tertiary-500: rgb(33, 33, 33, 0.5);
-  --color-background-tertiary: rgb(33, 33, 33);
+  --color-primary-100: rgb(0, 0, 0, 0.1);
+  --color-primary-200: rgb(0, 0, 0, 0.2);
+  --color-primary-300: rgb(0, 0, 0, 0.3);
+  --color-primary-400: rgb(0, 0, 0, 0.4);
+  --color-primary-500: rgb(0, 0, 0, 0.5);
+  --color-primary-600: rgb(0, 0, 0, 0.6);
+  --color-primary-700: rgb(0, 0, 0, 0.7);
+  --color-primary-800: rgb(0, 0, 0, 0.8);
+  --color-primary-900: rgb(0, 0, 0, 0.9);
+  --color-primary: rgb(0, 0, 0);
 
-  --color-text-primary: #ffffff;
+  --color-secondary-100: rgb(15, 15, 15, 0.1);
+  --color-secondary-200: rgb(15, 15, 15, 0.2);
+  --color-secondary-300: rgb(15, 15, 15, 0.3);
+  --color-secondary-400: rgb(15, 15, 15, 0.4);
+  --color-secondary-500: rgb(15, 15, 15, 0.5);
+  --color-secondary-600: rgb(15, 15, 15, 0.6);
+  --color-secondary-700: rgb(15, 15, 15, 0.7);
+  --color-secondary-800: rgb(15, 15, 15, 0.8);
+  --color-secondary-900: rgb(15, 15, 15, 0.9);
+  --color-secondary: rgb(15, 15, 15);
 
-  --color-text-secondary-100: rgba(153, 153, 153, 0.1);
-  --color-text-secondary: #999999;
+  --color-accent-100: rgb(128, 128, 128, 0.1);
+  --color-accent-200: rgb(128, 128, 128, 0.2);
+  --color-accent-300: rgb(128, 128, 128, 0.3);
+  --color-accent-400: rgb(128, 128, 128, 0.4);
+  --color-accent-500: rgb(128, 128, 128, 0.5);
+  --color-accent-600: rgb(128, 128, 128, 0.6);
+  --color-accent-700: rgb(128, 128, 128, 0.7);
+  --color-accent-800: rgb(128, 128, 128, 0.8);
+  --color-accent-900: rgb(128, 128, 128, 0.9);
+  --color-accent: rgb(128, 128, 128);
+
+  --color-text-100: rgb(255, 255, 255, 0.1);
+  --color-text-200: rgb(255, 255, 255, 0.2);
+  --color-text-300: rgb(255, 255, 255, 0.3);
+  --color-text-400: rgb(255, 255, 255, 0.4);
+  --color-text-500: rgb(255, 255, 255, 0.5);
+  --color-text-600: rgb(255, 255, 255, 0.6);
+  --color-text-700: rgb(255, 255, 255, 0.7);
+  --color-text-800: rgb(255, 255, 255, 0.8);
+  --color-text-900: rgb(255, 255, 255, 0.9);
+  --color-text: rgb(255, 255, 255);
+
+  --color-alert-100: rgb(255, 0, 0, 0.1);
+
+  --color-warning-100: rgb(255, 150, 0, 0.1);
+  --color-warning-400: rgb(255, 150, 0, 0.4);
+  --color-warning: rgb(255, 150, 0);
+
+  --color-wip-100: rgba(164, 159, 116, 0.1);
+
+  --color-info-100: rgb(0, 0, 255, 0.1);
+
+  --color-success-100: rgb(0, 255, 0, 0.1);
+  --color-success-200: rgb(0, 255, 0, 0.2);
+  --color-success-400: rgb(0, 255, 0, 0.4);
+  --color-success: rgb(0, 255, 0);
 
   --font-primary: "inter", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -31,10 +85,12 @@
   --font-size-header-1-tablet: 6rem;
   --font-size-header-1-desktop: 7.5rem;
 
+  --font-weight-thin: 100;
   --font-weight-normal: 400;
   --font-weight-semibold: 600;
   --font-weight-black: 900;
 
+  color-scheme: dark light;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -43,43 +99,114 @@
 
 body {
   background-image: repeating-linear-gradient(
-      90deg,
-      var(--color-background-tertiary) 0px,
-      var(--color-background-tertiary) 1px,
+      0deg,
+      rgba(166, 166, 166, 0.08) 0px,
+      hsla(202, 0%, 65%, 0.08) 1px,
       transparent 1px,
-      transparent 4px
+      transparent 11px
     ),
     repeating-linear-gradient(
-      0deg,
-      var(--color-background-primary) 0px,
-      var(--color-background-primary) 5px,
-      transparent 5px,
-      transparent 6px
-    ),
-    linear-gradient(
       90deg,
-      var(--color-background-tertiary),
-      var(--color-background-tertiary)
-    );
+      hsla(202, 0%, 65%, 0.08) 0px,
+      hsla(202, 0%, 65%, 0.08) 1px,
+      transparent 1px,
+      transparent 11px
+    ),
+    linear-gradient(90deg, rgb(20, 20, 20), rgb(20, 20, 20));
+  background-image: var(--bg-skulls), var(--bg-concrete);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+section {
+  padding: 2rem 0;
 }
 
 h1 {
-  color: var(--color-text-primary);
+  color: var(--color-text);
   font-family: var(--font-primary);
   font-size: var(--font-size-header-1-mobile);
-  font-style: normal;
   font-weight: var(--font-weight-black);
-  line-height: 120%; /* 93.75% */
-  letter-spacing: -2.25px;
-  margin-bottom: 2rem;
+}
+
+h2 {
+  color: var(--color-text);
+  font-family: var(--font-primary);
+  font-size: 3rem;
+  font-weight: var(--font-weight-semibold);
 }
 
 em {
-  border: 1px solid var(--color-text-secondary-100);
-  font-style: normal;
+  border: 1px solid var(--color-accent-100);
   backdrop-filter: blur(1px);
-  background-color: var(--color-background-tertiary-500);
+  background-color: var(--color-accent-200);
   border-radius: 4px;
   font-size: inherit;
   padding-inline: 2px;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.separator {
+  border-bottom: 1px solid var(--color-accent-100);
+  border-radius: 4px;
+  margin: 2rem 0;
+}
+
+.circle-sonar {
+  border-radius: 50%;
+  position: relative;
+  background-color: var(--color-success-400);
+  width: 8px;
+  height: 8px;
+}
+
+.circle-sonar::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-success-400);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0.4;
+}
+
+.circle-sonar::before {
+  animation: sonar-pulse 2s infinite ease-out;
+}
+
+.circle-sonar::after {
+  animation: sonar-pulse 2s infinite ease-out;
+  animation-delay: 1s;
+}
+
+@keyframes sonar-pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.4;
+  }
+  70% {
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+ul,
+ol {
+  list-style: none;
 }

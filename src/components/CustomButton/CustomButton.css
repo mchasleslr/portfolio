@@ -1,0 +1,37 @@
+.custom-btn {
+  padding: 4px;
+  border-radius: 30px;
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-semibold);
+  background-color: var(--color-secondary-400);
+  backdrop-filter: blur(1px);
+  transition: all 0.1s ease-in-out;
+}
+
+.custom-btn:hover {
+  background-color: var(--color-accent-400);
+}
+
+.custom-btn,
+.custom-btn__thumbnail {
+  border: 1px solid var(--color-accent-300);
+}
+
+.custom-btn .custom-btn__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.custom-btn__thumbnail {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.custom-btn__text {
+  font-size: 1.25rem;
+  margin-right: 1rem;
+  color: var(--color-text);
+}
