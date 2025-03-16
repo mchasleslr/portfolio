@@ -77,21 +77,19 @@
   cursor: default;
 }
 
-/* .madskills__event {
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 1rem;
-  margin-bottom: 1.5rem;
+  padding: 2rem 0;
 }
 
-.madskills__year {
-  font-size: 1.25rem;
-  font-family: var(--font-primary);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-text-800);
-}
-
-.madskills__title {
+.footer__text {
+  color: var(--color-text-700);
   font-family: var(--font-primary);
   font-size: 1rem;
-  line-height: 115%;
-  margin-bottom: 1.5rem;
-} */
+  font-style: normal;
+  font-weight: var(--font-weight-normal);
+  line-height: 150%;
+}

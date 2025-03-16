@@ -2,6 +2,9 @@ import { useEffect } from "react";
 import "./App.css";
 import CustomButton from "./components/CustomButton/CustomButton";
 import CustomCard from "./components/CustomCard/CustomCard";
+import { FaGithub, FaGitlab, FaLinkedinIn } from "react-icons/fa";
+import { IoMdMail } from "react-icons/io";
+import IconsList from "./components/IconsList/IconsList";
 
 function App() {
   const projects = [
@@ -99,6 +102,25 @@ function App() {
       icon: "🎓",
       thumbnail: "university.jpg",
       tags: ["motivation", "réinvention", "apprentissage"],
+    },
+  ];
+
+  const socials = [
+    {
+      url: "#",
+      icon: FaLinkedinIn,
+    },
+    {
+      url: "#",
+      icon: FaGithub,
+    },
+    {
+      url: "#",
+      icon: FaGitlab,
+    },
+    {
+      url: "#",
+      icon: IoMdMail,
     },
   ];
 
@@ -207,6 +229,12 @@ function App() {
           </div>
         </section>
       </main>
+      <footer className="footer">
+        <IconsList list={socials} className="footer__socials" />
+        <p className="footer__text">
+          © {new Date().getFullYear()} Maxime CHASLES. Tous droits réservés.
+        </p>
+      </footer>
     </>
   );
 }

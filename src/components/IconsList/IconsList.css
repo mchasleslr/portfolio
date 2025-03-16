@@ -1,0 +1,11 @@
+.icons-list__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5em;
+}
+
+.icons-list__vector {
+  font-size: 40em;
+  color: var(--color-text-800);
+}
