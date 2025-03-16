@@ -1,7 +1,3 @@
-# My Personal Portfolio
+# Portfolio
 
-# 🥚🥚🥚
-
-Vous avez trouvé le troisième et dernier easter egg ! Celui-ci était plutôt bien caché, félicitations 🎉 ! Si l'expérience vous a plus, n'hésitez pas à parler de moi autour de vous. Je suis actuellement à la recherche d'une alternance en Licence Professionnelle MIAW à La Rochelle Université. Merci de votre visite, à très bientôt.
-
-Maxime Chasles
+This is my personal website where I showcase my projects and skills. I have built this portfolio using React. I have also used GitHub Pages to deploy it.
