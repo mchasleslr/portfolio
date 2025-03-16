@@ -130,7 +130,7 @@ function App() {
       icon: IoMdMail,
     },
     {
-      id: "2207280",
+      id: "9a96933",
       url: "https://github.com/mchasleslr",
       icon: FaGithub,
     },
@@ -177,7 +177,7 @@ function App() {
       },
     },
     {
-      id: "4061790",
+      id: "9a96933",
       title: "Code",
       action: function () {
         setEggFound([true, true, true]);
@@ -284,7 +284,7 @@ function App() {
           <h2 className="madskills__header">
             Beyond the{" "}
             <code
-              id="4061790"
+              id="9a96933"
               onClick={eggFound[1] ? handleEasterEgg : undefined}
             >
               {revealCode ? 4061790 : "code"}
