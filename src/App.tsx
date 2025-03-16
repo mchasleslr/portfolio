@@ -107,19 +107,19 @@ function App() {
 
   const socials = [
     {
-      url: "#",
+      url: "https://www.linkedin.com/in/maxime-chasles-bb102328a/",
       icon: FaLinkedinIn,
     },
     {
-      url: "#",
+      url: "https://github.com/mchasleslr",
       icon: FaGithub,
     },
     {
-      url: "#",
+      url: "https://gitlab.univ-lr.fr/mchasles",
       icon: FaGitlab,
     },
     {
-      url: "#",
+      url: "mailto:mchasles@etudiant.univ-lr.fr",
       icon: IoMdMail,
     },
   ];
