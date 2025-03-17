@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import "./Desktop.css";
 import CustomButton from "./components/CustomButton/CustomButton";
 import CustomCard from "./components/CustomCard/CustomCard";
 import { FaFileAlt, FaGithub, FaGitlab, FaLinkedinIn } from "react-icons/fa";
@@ -8,6 +9,7 @@ import { RiContactsBook2Line } from "react-icons/ri";
 import { IoMdMail } from "react-icons/io";
 import IconsList from "./components/IconsList/IconsList";
 import Navigation from "./components/Navigation/Navigation";
+import { MdContentCopy } from "react-icons/md";
 
 function App() {
   const initEggs = () => {
@@ -80,7 +82,7 @@ function App() {
   const events = [
     {
       year: "2016",
-      title: "Road trip - Australia",
+      title: "Australia",
       description:
         "Immersion dans un nouvel environnement culturel. Cette expérience a renforcé mon adaptabilité, mon ouverture d'esprit et mon autonomie.",
       icon: "🦘",
@@ -89,7 +91,7 @@ function App() {
     },
     {
       year: "2019",
-      title: "Bikepacking - From La Rochelle to Corsica",
+      title: "From LR to Corsica",
       description:
         "Défi sportif en. Un voyage de plusieurs semaines qui m’a appris la persévérance, la discipline et la gestion de l'imprévu.",
       icon: "🚴‍♂️",
@@ -98,7 +100,7 @@ function App() {
     },
     {
       year: "2021–2022",
-      title: "42.195 km - Marathon de La Rochelle",
+      title: "42.195 Km",
       description:
         "Objectifs atteints grâce à une préparation rigoureuse. Ces épreuves ont consolidé ma rigueur, ma constance et ma capacité mentale à aller jusqu’au bout.",
       icon: "🏃",
@@ -107,7 +109,7 @@ function App() {
     },
     {
       year: "2023",
-      title: "Nouvel élan - Reprise d'études",
+      title: "Back to school",
       description:
         "Un engagement fort vers une nouvelle voie professionnelle. Ce choix témoigne de ma motivation, de ma capacité à me réinventer et de ma volonté d'apprendre.",
       icon: "🎓",
@@ -167,7 +169,7 @@ function App() {
     },
 
     {
-      id: "2207280",
+      id: "9a96933",
       title: "Octocat",
       message:
         "Bravo, vous avez trouvé le deuxième easter egg ! Vous avez l'oeil 👀.\n\nIl y a un CODE caché quelque part sur cette page, il vous mènera au dernier 🥚 ...\n\nÀ vous de jouer !\n\nUn indice : c'est le moment de faire un petit tour sur Github 😉 !",
@@ -177,7 +179,7 @@ function App() {
       },
     },
     {
-      id: "9a96933",
+      id: "09aabfd",
       title: "Code",
       action: function () {
         setEggFound([true, true, true]);
@@ -229,109 +231,131 @@ function App() {
     }
   };
 
+  // A extraire dans un composant
+  const [isCopied, setIsCopied] = useState(false);
+  const handleCopyTooltip = () => {
+    setIsCopied(true);
+    setTimeout(() => {
+      setIsCopied(false);
+    }, 2000);
+  };
+
   return (
     <>
-      <header>
-        <Navigation homeBtn links={menu} />
-        <div className="header__hero">
-          <h1 className="header_title">Développeur Web en devenir</h1>
-          <p className="header_description">
-            Moi c’est{" "}
-            <em id="b513a2c" onClick={handleEasterEgg}>
-              Maxime
-            </em>
-            , étudiant en informatique à La Rochelle Université. Ancien barman
-            passionné par l’art du service, je me réinvente aujourd’hui dans le
-            développement Web.
-          </p>
-          <div className="header__cta-container">
-            <CustomButton
-              className="header__cta"
-              text="À propos"
-              thumbnail="portrait.jpeg"
-            />
-            <p className="header__tag">
-              <span className="circle-sonar"></span>
-              #opentowork
+      <div className="body-wrapper">
+        <header className="header">
+          <Navigation homeBtn links={menu} />
+          <div className="header__hero">
+            <h1 className="header_title">Développeur Web en devenir</h1>
+            <p className="header_description">
+              Moi c’est{" "}
+              <em id="b513a2c" onClick={handleEasterEgg}>
+                Maxime
+              </em>
+              , étudiant en informatique à La Rochelle Université. Ancien barman
+              passionné par l’art du service, je me réinvente aujourd’hui dans
+              le développement Web.
             </p>
+            <div className="header__cta-container">
+              <CustomButton
+                className="header__cta"
+                text="À propos"
+                thumbnail="portrait.jpeg"
+              />
+              <p className="header__tag">
+                <span className="circle-sonar"></span>
+                #opentowork
+              </p>
+            </div>
           </div>
-        </div>
-      </header>
-      <main>
-        <section className="showcase">
-          <div className="showcase__header-container">
-            <h2 className="showcase__header">Showcase</h2>
-            <p className="showcase__description">
-              Une sélection parmi mes projets personnels et académiques.
+        </header>
+        <main>
+          <section className="showcase">
+            <div className="showcase__header-container">
+              <h2 className="showcase__header">Showcase</h2>
+              <p className="showcase__description">
+                Une sélection parmi mes projets personnels et académiques.
+              </p>
+              <div className="separator" />
+            </div>
+            <div className="showcase__projects">
+              {projects.map((project, index) => (
+                <CustomCard
+                  key={index}
+                  title={project.title}
+                  description={project.description}
+                  date={project.date}
+                  tags={project.tags}
+                  status={project.status}
+                  source={project.source}
+                />
+              ))}
+            </div>
+          </section>
+          <section className="madskills">
+            <h2 className="madskills__header">
+              Beyond the{" "}
+              <code
+                className="madskills__code"
+                id="09aabfd"
+                onClick={eggFound[1] ? handleEasterEgg : undefined}
+              >
+                {revealCode ? "9a96933" : "code"}
+              </code>
+              {eggFound[2] && (
+                <MdContentCopy
+                  className="madskills__copy"
+                  onClick={() => {
+                    navigator.clipboard.writeText("9a96933");
+                    handleCopyTooltip();
+                  }}
+                />
+              )}
+              {isCopied && <span className="madskills__tooltip">Copié !</span>}
+            </h2>
+            <p className="madskills__description">
+              Certaines expériences personnelles ont fortement contribué à
+              façonner mes qualités humaines et professionnelles. Voici quelques
+              exemples significatifs.
             </p>
             <div className="separator" />
-          </div>
-          <div className="showcase__projects">
-            {projects.map((project, index) => (
-              <CustomCard
-                key={index}
-                title={project.title}
-                description={project.description}
-                date={project.date}
-                tags={project.tags}
-                status={project.status}
-                source={project.source}
-              />
-            ))}
-          </div>
-        </section>
-        <section className="madskills">
-          <h2 className="madskills__header">
-            Beyond the{" "}
-            <code
-              id="9a96933"
-              onClick={eggFound[1] ? handleEasterEgg : undefined}
-            >
-              {revealCode ? 4061790 : "code"}
-            </code>
-          </h2>
-          <p className="madskills__description">
-            Certaines expériences personnelles ont fortement contribué à
-            façonner mes qualités humaines et professionnelles. Voici quelques
-            exemples significatifs.
+
+            <div className="madskills__events">
+              {events.map((event, index) => (
+                <CustomCard
+                  key={index}
+                  title={event.title}
+                  description={event.description}
+                  thumbnail={event.thumbnail}
+                  date={event.year}
+                  tags={event.tags}
+                />
+              ))}
+            </div>
+          </section>
+        </main>
+        <footer className="footer">
+          <div
+            className={`octocat ${
+              !eggFound[0] || eggFound[1] ? "octocat--invisible" : ""
+            }`}
+          ></div>
+
+          {!eggFound[0] || eggFound[1] ? (
+            <IconsList list={socials} className="footer__socials" />
+          ) : (
+            <IconsList
+              list={socials}
+              onClick={handleEasterEgg}
+              className="footer__socials"
+              clickables={[3]}
+            />
+          )}
+          <p className="footer__text">
+            © {new Date().getFullYear()} Maxime CHASLES. Tous droits réservés.
           </p>
-          <div className="separator" />
-
-          <div className="madskills__events">
-            {events.map((event, index) => (
-              <CustomCard
-                key={index}
-                title={event.title}
-                description={event.description}
-                thumbnail={event.thumbnail}
-                date={event.year}
-                tags={event.tags}
-              />
-            ))}
-          </div>
-        </section>
-      </main>
-      <footer className="footer">
-        <div
-          className={`hidden_layout ${
-            !eggFound[0] || eggFound[1] ? "invisible" : ""
-          }`}
-        ></div>
-
-        {!eggFound[0] || eggFound[1] ? (
-          <IconsList list={socials} className="footer__socials" />
-        ) : (
-          <IconsList
-            list={socials}
-            onClick={handleEasterEgg}
-            className="footer__socials"
-            clickables={[3]}
-          />
-        )}
-        <p className="footer__text">
-          © {new Date().getFullYear()} Maxime CHASLES. Tous droits réservés.
-        </p>
-      </footer>
+        </footer>
+      </div>
     </>
   );
 }

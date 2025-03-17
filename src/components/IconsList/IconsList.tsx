@@ -1,4 +1,5 @@
 import "./IconsList.css";
+import "./IconsList.desktop.css";
 import { IconType } from "react-icons";
 
 type IconsListProps = {

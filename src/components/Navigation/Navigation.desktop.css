@@ -1,0 +1,6 @@
+@media screen and (min-width: 1024px) {
+  .navigation {
+    position: fixed;
+    top: 1rem;
+  }
+}

@@ -1,5 +1,6 @@
 import Tag from "../Tag/Tag";
 import "./CustomCard.css";
+import "./CustomCard.desktop.css";
 import { FaCalendar, FaGithub, FaGitlab, FaCircle } from "react-icons/fa";
 
 import { IoCheckmarkOutline } from "react-icons/io5";

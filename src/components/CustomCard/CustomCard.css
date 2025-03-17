@@ -1,6 +1,4 @@
 .card {
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -16,6 +14,7 @@
 
 .card__thumbnail {
   display: block;
+  aspect-ratio: 16 / 9;
   height: 100px;
   width: 100%;
   border-radius: 10px;
@@ -28,6 +27,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 1.25rem;
 }
 
 .card__date {
@@ -39,7 +39,6 @@
   font-size: 1.25rem;
   font-weight: var(--font-weight-normal);
   color: var(--color-text-400);
-  margin-bottom: 1.25rem;
 }
 
 .card__status {
@@ -51,7 +50,6 @@
   font-size: 1rem;
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-400);
-  margin-bottom: 1.25rem;
   position: relative;
 }
 

@@ -1,0 +1,58 @@
+@media screen and (min-width: 1024px) {
+  .card {
+    justify-content: start;
+  }
+
+  .card__meta {
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .card__thumbnail {
+    height: 150px;
+    margin-bottom: 1.5rem;
+  }
+
+  .card__date {
+    font-size: 1.5rem;
+  }
+
+  .card__status {
+    font-size: 1.15rem;
+  }
+
+  .card__status--wip {
+    font-size: 0.85rem;
+  }
+
+  .card__status--completed {
+    font-size: 1.5rem;
+    color: var(--color-success-400);
+  }
+
+  .card__title {
+    gap: 1.25rem;
+    font-size: 2.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .card__link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  /* TODO: Revoir le positionnement des éléments */
+  .card__description {
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-normal);
+    color: var(--color-text-700);
+    margin-bottom: 1.5rem;
+  }
+
+  .card__tags {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+}

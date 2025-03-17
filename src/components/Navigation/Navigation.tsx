@@ -1,5 +1,6 @@
 import { IconType } from "react-icons";
 import "./Navigation.css";
+import "./Navigation.desktop.css";
 import { PropsWithChildren, useState } from "react";
 import { FaHome } from "react-icons/fa";
 import Touchable from "../Touchable/Touchable";
