@@ -10,4 +10,5 @@
     var(--color-accent-200) 100%
   );
   backdrop-filter: blur(1px);
+  color: var(--color-text);
 }

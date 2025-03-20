@@ -1,0 +1,10 @@
+@media screen and (min-width: 1024px) {
+  .footer__text {
+    color: var(--color-text-700);
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: var(--font-weight-normal);
+    line-height: 150%;
+  }
+}

@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import { CustomButton, CustomCard, IconsList } from "@/components";
+import { CustomButton, CustomCard } from "@/components";
 import "./Home.css";
 import "./Home.desktop.css";
-import { FaGithub, FaGitlab, FaLinkedinIn } from "react-icons/fa";
-import { IoMdMail } from "react-icons/io";
+
 import { MdContentCopy } from "react-icons/md";
 
 export default function Home() {
@@ -112,26 +111,6 @@ export default function Home() {
       tags: ["motivation", "réinvention", "apprentissage"],
     },
   ];
-  const socials = [
-    {
-      url: "https://www.linkedin.com/in/maxime-chasles-bb102328a/",
-      icon: FaLinkedinIn,
-    },
-
-    {
-      url: "https://gitlab.univ-lr.fr/mchasles",
-      icon: FaGitlab,
-    },
-    {
-      url: "mailto:mchasles@etudiant.univ-lr.fr",
-      icon: IoMdMail,
-    },
-    {
-      id: "9a96933",
-      url: "https://github.com/mchasleslr",
-      icon: FaGithub,
-    },
-  ];
 
   const easterEggs = [
     {
@@ -166,38 +145,38 @@ export default function Home() {
     },
   ];
 
-  useEffect(() => {
-    let targetX = 0;
-    let targetY = 0;
-    let currentX = 0;
-    let currentY = 0;
+  // useEffect(() => {
+  //   let targetX = 0;
+  //   let targetY = 0;
+  //   let currentX = 0;
+  //   let currentY = 0;
 
-    const speed = 0.05;
+  //   const speed = 0.05;
 
-    const update = () => {
-      currentX += (targetX - currentX) * speed;
-      currentY += (targetY - currentY) * speed;
+  //   const update = () => {
+  //     currentX += (targetX - currentX) * speed;
+  //     currentY += (targetY - currentY) * speed;
 
-      document.documentElement.style.setProperty("--mouse-x", `${currentX}px`);
-      document.documentElement.style.setProperty("--mouse-y", `${currentY}px`);
+  //     document.documentElement.style.setProperty("--mouse-x", `${currentX}px`);
+  //     document.documentElement.style.setProperty("--mouse-y", `${currentY}px`);
 
-      requestAnimationFrame(update);
-    };
+  //     requestAnimationFrame(update);
+  //   };
 
-    const handleMouseMove = (e: { pageX: number; pageY: number }) => {
-      targetX = e.pageX;
-      targetY = e.pageY;
-    };
+  //   const handleMouseMove = (e: { pageX: number; pageY: number }) => {
+  //     targetX = e.pageX;
+  //     targetY = e.pageY;
+  //   };
 
-    if (revealBackground) {
-      document.addEventListener("mousemove", handleMouseMove);
-      update();
-    }
+  //   if (revealBackground) {
+  //     document.addEventListener("mousemove", handleMouseMove);
+  //     update();
+  //   }
 
-    return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, [revealBackground]);
+  //   return () => {
+  //     document.removeEventListener("mousemove", handleMouseMove);
+  //   };
+  // }, [revealBackground]);
 
   const handleEasterEgg = (e: any) => {
     e.preventDefault();
@@ -220,121 +199,99 @@ export default function Home() {
 
   return (
     <>
-      <div className="body-wrapper">
-        <header className="header">
-          <div className="header__hero">
-            <div className="header__hero-blur" />
+      <header className="header">
+        <div className="header__hero">
+          <div className="header__hero-blur" />
 
-            <h1 className="header_title">Développeur Web en devenir</h1>
-            <p className="header_description">
-              Moi c’est{" "}
-              <em id="b513a2c" onClick={handleEasterEgg}>
-                Maxime
-              </em>
-              , étudiant en informatique à La Rochelle Université. Ancien barman
-              passionné par l’art du service, je me réinvente aujourd’hui dans
-              le développement Web.
+          <h1 className="header_title">Développeur Web en devenir</h1>
+          <p className="header_description">
+            Moi c’est{" "}
+            <em id="b513a2c" onClick={handleEasterEgg}>
+              Maxime
+            </em>
+            , étudiant en informatique à La Rochelle Université. Ancien barman
+            passionné par l’art du service, je me réinvente aujourd’hui dans le
+            développement Web.
+          </p>
+          <div className="header__cta-container">
+            <CustomButton
+              to="/about"
+              className="header__cta"
+              text="À propos"
+              thumbnail="portrait.jpeg"
+            />
+            <p className="header__tag">
+              <span className="circle-sonar"></span>
+              #opentowork
             </p>
-            <div className="header__cta-container">
-              <CustomButton
-                className="header__cta"
-                text="À propos"
-                thumbnail="portrait.jpeg"
-              />
-              <p className="header__tag">
-                <span className="circle-sonar"></span>
-                #opentowork
-              </p>
-            </div>
           </div>
-        </header>
-        <main>
-          <section className="showcase">
-            <div className="showcase__header-container">
-              <h2 className="showcase__header">Showcase</h2>
-              <p className="showcase__description">
-                Une sélection parmi mes projets personnels et académiques.
-              </p>
-              <div className="separator" />
-            </div>
-            <div className="showcase__projects">
-              {projects.map((project, index) => (
-                <CustomCard
-                  key={index}
-                  title={project.title}
-                  description={project.description}
-                  date={project.date}
-                  tags={project.tags}
-                  status={project.status}
-                  source={project.source}
-                />
-              ))}
-            </div>
-          </section>
-          <section className="madskills">
-            <h2 className="madskills__header">
-              Beyond the{" "}
-              <code
-                className="madskills__code"
-                id="09aabfd"
-                onClick={eggFound[1] ? handleEasterEgg : undefined}
-              >
-                {revealCode ? "9a96933" : "code"}
-              </code>
-              {eggFound[2] && (
-                <MdContentCopy
-                  className="madskills__copy"
-                  onClick={() => {
-                    navigator.clipboard.writeText("9a96933");
-                    handleCopyTooltip();
-                  }}
-                />
-              )}
-              {isCopied && <span className="madskills__tooltip">Copié !</span>}
-            </h2>
-            <p className="madskills__description">
-              Certaines expériences personnelles ont fortement contribué à
-              façonner mes qualités humaines et professionnelles. Voici quelques
-              exemples significatifs.
+        </div>
+      </header>
+      <main>
+        <section className="showcase">
+          <div className="showcase__header-container">
+            <h2 className="showcase__header">Showcase</h2>
+            <p className="showcase__description">
+              Une sélection parmi mes projets personnels et académiques.
             </p>
             <div className="separator" />
-
-            <div className="madskills__events">
-              {events.map((event, index) => (
-                <CustomCard
-                  key={index}
-                  title={event.title}
-                  description={event.description}
-                  thumbnail={event.thumbnail}
-                  date={event.year}
-                  tags={event.tags}
-                />
-              ))}
-            </div>
-          </section>
-        </main>
-        <footer className="footer">
-          <div
-            className={`octocat ${
-              !eggFound[0] || eggFound[1] ? "octocat--invisible" : ""
-            }`}
-          ></div>
-
-          {!eggFound[0] || eggFound[1] ? (
-            <IconsList list={socials} className="footer__socials" />
-          ) : (
-            <IconsList
-              list={socials}
-              onClick={handleEasterEgg}
-              className="footer__socials"
-              clickables={[3]}
-            />
-          )}
-          <p className="footer__text">
-            © {new Date().getFullYear()} Maxime CHASLES. Tous droits réservés.
+          </div>
+          <div className="showcase__projects">
+            {projects.map((project, index) => (
+              <CustomCard
+                key={index}
+                title={project.title}
+                description={project.description}
+                date={project.date}
+                tags={project.tags}
+                status={project.status}
+                source={project.source}
+              />
+            ))}
+          </div>
+        </section>
+        <section className="madskills">
+          <h2 className="madskills__header">
+            Beyond the{" "}
+            <code
+              className="madskills__code"
+              id="09aabfd"
+              onClick={eggFound[1] ? handleEasterEgg : undefined}
+            >
+              {revealCode ? "9a96933" : "code"}
+            </code>
+            {eggFound[2] && (
+              <MdContentCopy
+                className="madskills__copy"
+                onClick={() => {
+                  navigator.clipboard.writeText("9a96933");
+                  handleCopyTooltip();
+                }}
+              />
+            )}
+            {isCopied && <span className="madskills__tooltip">Copié !</span>}
+          </h2>
+          <p className="madskills__description">
+            Certaines expériences personnelles ont fortement contribué à
+            façonner mes qualités humaines et professionnelles. Voici quelques
+            exemples significatifs.
           </p>
-        </footer>
-      </div>
+          <div className="separator" />
+
+          <div className="madskills__events">
+            {events.map((event, index) => (
+              <CustomCard
+                key={index}
+                title={event.title}
+                description={event.description}
+                thumbnail={event.thumbnail}
+                date={event.year}
+                tags={event.tags}
+              />
+            ))}
+          </div>
+        </section>
+      </main>
     </>
   );
 }

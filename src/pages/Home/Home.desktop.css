@@ -1,8 +1,4 @@
 @media screen and (min-width: 1024px) {
-  #root {
-    padding: 8rem 2rem 1rem 2rem;
-  }
-
   .header_title {
     font-size: 8rem;
     margin-bottom: 2rem;
@@ -21,15 +17,6 @@
   .showcase__description,
   .madskills__description {
     font-size: 2rem;
-  }
-
-  .footer__text {
-    color: var(--color-text-700);
-    font-family: var(--font-primary);
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: var(--font-weight-normal);
-    line-height: 150%;
   }
 
   .madskills__header {

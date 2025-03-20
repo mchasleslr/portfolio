@@ -1,7 +1,7 @@
 import { IconType } from "react-icons";
 import "./Touchable.css";
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 type TouchableProps = {
   active?: boolean;
@@ -11,6 +11,7 @@ type TouchableProps = {
   icon?: IconType;
   text?: string;
   onClick?: () => void;
+  download?: boolean;
 };
 
 export default function Touchable({
@@ -21,6 +22,7 @@ export default function Touchable({
   icon,
   text,
   onClick,
+  download,
 }: TouchableProps) {
   return href ? (
     <a
@@ -29,21 +31,24 @@ export default function Touchable({
       className={`touchable ${className ? className : ""} ${
         active ? "touchable--active" : ""
       }`}
+      download={download}
     >
       {icon && React.createElement(icon, { className: "touchable__icon" })}
       {text && <span className="touchable__text">{text}</span>}
     </a>
   ) : to ? (
-    <Link
+    <NavLink
       onClick={onClick}
       to={to}
-      className={`touchable ${className ? className : ""} ${
-        active ? "touchable--active" : ""
-      }`}
+      className={({ isActive }) =>
+        `touchable ${className ? className : ""} ${
+          isActive ? "touchable--active" : ""
+        }`
+      }
     >
       {icon && React.createElement(icon, { className: "touchable__icon" })}
       {text && <span className="touchable__text">{text}</span>}
-    </Link>
+    </NavLink>
   ) : (
     <button
       onClick={onClick}

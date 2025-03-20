@@ -1,18 +1,3 @@
-#root {
-  background: radial-gradient(
-    75vh at var(--mouse-x) var(--mouse-y),
-    var(--color-primary-700) 0%,
-    var(--color-primary) 75%
-  );
-
-  padding: 3rem 2rem 6rem 2rem;
-}
-
-.body-wrapper {
-  max-width: 1024px;
-  margin: 0 auto;
-}
-
 .header__hero {
   position: relative;
 }
@@ -85,24 +70,6 @@
   cursor: default;
 }
 
-.footer {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  padding: 2rem 0;
-}
-
-.footer__text {
-  color: var(--color-text-700);
-  font-family: var(--font-primary);
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: var(--font-weight-normal);
-  line-height: 150%;
-}
-
 .madskills__header {
   display: flex;
   flex-direction: row;
@@ -133,6 +100,36 @@
   z-index: 1000;
 }
 
+.circle-sonar {
+  border-radius: 50%;
+  position: relative;
+  background-color: var(--color-success-400);
+  width: 8px;
+  height: 8px;
+}
+
+.circle-sonar::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-success-400);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0.4;
+}
+
+.circle-sonar::before {
+  animation: sonar-pulse 2s infinite ease-out;
+}
+
+.circle-sonar::after {
+  animation: sonar-pulse 2s infinite ease-out;
+  animation-delay: 1s;
+}
+
 .octocat,
 .octocat--invisible {
   position: absolute;
@@ -152,17 +149,4 @@
 .octocat--invisible {
   opacity: 0;
   animation: fade-out 0.5s ease-in-out;
-}
-
-@keyframes fade-out {
-  0% {
-    transform: scaleX(1);
-    transform: translateX(-50%);
-    opacity: 1;
-  }
-  100% {
-    transform: scaleX(0.5);
-    transform: translateX(0%);
-    opacity: 0;
-  }
 }

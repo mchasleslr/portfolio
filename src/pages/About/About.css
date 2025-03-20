@@ -1,0 +1,29 @@
+.about {
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  gap: 10rem;
+  margin: 0 auto;
+  padding-inline: 18rem;
+  padding-top: 20rem;
+  justify-content: space-between;
+}
+
+.about__portrait {
+  width: 200px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
+.about__aside {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about__section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
