@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
-import { CustomButton, CustomCard, IconsList, Navigation } from "@/components";
+import { CustomButton, CustomCard, IconsList } from "@/components";
 import "./Home.css";
 import "./Home.desktop.css";
-import { FaFileAlt, FaGithub, FaGitlab, FaLinkedinIn } from "react-icons/fa";
-import { IoPersonCircleSharp } from "react-icons/io5";
-import { RiContactsBook2Line } from "react-icons/ri";
+import { FaGithub, FaGitlab, FaLinkedinIn } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import { MdContentCopy } from "react-icons/md";
 

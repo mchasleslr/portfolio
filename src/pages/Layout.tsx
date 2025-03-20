@@ -1,4 +1,4 @@
-import { IconsList, Navigation } from "@/components";
+import { Navigation } from "@/components";
 import { FaFileAlt } from "react-icons/fa";
 import { IoPersonCircleSharp } from "react-icons/io5";
 import { RiContactsBook2Line } from "react-icons/ri";

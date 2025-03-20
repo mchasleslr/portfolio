@@ -17,7 +17,6 @@ type NavigationProps = {
 export default function Navigation({
   homeBtn,
   links,
-  children,
 }: NavigationProps & PropsWithChildren) {
   const [activeLink, setActiveLink] = useState(0);
 
