@@ -3,11 +3,6 @@
     padding: 8rem 2rem 1rem 2rem;
   }
 
-  .body-wrapper {
-    max-width: 1024px;
-    margin: 0 auto;
-  }
-
   .header_title {
     font-size: 8rem;
     margin-bottom: 2rem;
@@ -65,5 +60,11 @@
     font-weight: var(--font-weight-semibold);
     line-height: 150%;
     z-index: 1000;
+  }
+
+  .octocat,
+  .octocat--invisible {
+    width: 130px;
+    height: 130px;
   }
 }

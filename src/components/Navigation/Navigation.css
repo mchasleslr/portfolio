@@ -1,6 +1,8 @@
 .navigation {
   position: fixed;
   height: fit-content;
+  right: 50dvw;
+  transform: translateX(50%);
   bottom: 2rem;
   display: flex;
   padding: 4px 6px;

@@ -13,6 +13,7 @@ type NavigationProps = {
     icon?: IconType;
   }[];
 };
+
 export default function Navigation({
   homeBtn,
   links,
@@ -29,6 +30,7 @@ export default function Navigation({
               onClick={() => setActiveLink(0)}
               icon={FaHome}
               active={activeLink == 0 ? true : false}
+              to="/"
             ></Touchable>
           </div>
 
@@ -38,7 +40,7 @@ export default function Navigation({
                 <li className="navigation__item" key={index + 1}>
                   <Touchable
                     onClick={() => setActiveLink(index + 1)}
-                    href={link.url}
+                    to={link.url}
                     className="navigation__link"
                     text={link.title}
                     icon={link.icon}

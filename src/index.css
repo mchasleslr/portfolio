@@ -102,7 +102,7 @@
 }
 
 body {
-  background-image: repeating-linear-gradient(
+  /* background-image: repeating-linear-gradient(
       0deg,
       rgba(166, 166, 166, 0.08) 0px,
       hsla(202, 0%, 65%, 0.08) 1px,
@@ -116,7 +116,7 @@ body {
       transparent 1px,
       transparent 11px
     ),
-    linear-gradient(90deg, rgb(20, 20, 20), rgb(20, 20, 20));
+    linear-gradient(90deg, rgb(20, 20, 20), rgb(20, 20, 20)); */
   background-image: var(--bg-skulls), var(--bg-concrete);
 }
 
