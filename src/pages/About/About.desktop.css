@@ -1,0 +1,125 @@
+@media screen and (min-width: 1024px) {
+  .about {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .about__portrait {
+    width: 200px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 100%;
+    border: 3px solid var(--color-accent-400);
+  }
+
+  .about__aside {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about__section {
+    grid-column: 2 / 2;
+    padding: 0 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    height: 100dvh;
+  }
+
+  .about__me {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .about__name {
+    text-wrap: nowrap;
+    font-size: 7rem;
+    letter-spacing: -2px;
+    background: linear-gradient(
+      0deg,
+      var(--color-text-700) 0%,
+      var(--color-text) 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-right: 0.5rem;
+  }
+
+  .about__role {
+    font-size: 5rem;
+    font-weight: 300;
+    color: var(--color-text-500);
+    margin-top: 1.25rem;
+  }
+
+  .about__links {
+    padding-top: 5rem;
+    display: flex;
+    gap: 2rem;
+  }
+
+  .about__link {
+    padding: 0.5rem 1rem;
+    background-color: var(--color-primary-100);
+    outline: 1px solid var(--color-accent-400);
+    border-radius: 1rem;
+    backdrop-filter: blur(5px);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .about__link:hover {
+    background-color: var(--color-accent-400);
+    color: var(--color-text-500);
+    outline: 1px solid var(--color-accent-500);
+  }
+
+  .about__location {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    font-weight: 400;
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    color: var(--color-text);
+  }
+
+  .about__location-icon {
+    font-size: 2rem;
+    color: var(--color-accent-800);
+  }
+
+  .about__tags {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .about__tag {
+    background: var(--color-primary-400);
+    outline: 1px solid var(--color-accent-400);
+    border-radius: 1rem;
+    font-family: var(--font-primary);
+  }
+
+  .about__description {
+    padding-block: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .about__description-intro {
+    font-family: var(--font-primary);
+    color: var(--color-text-900);
+    text-align: justify;
+    font-size: 2.25rem;
+    font-weight: 400;
+  }
+}

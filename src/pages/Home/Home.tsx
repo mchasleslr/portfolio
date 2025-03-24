@@ -1,19 +1,10 @@
-import { useEffect, useState } from "react";
-import { CustomButton, CustomCard } from "@/components";
+import { CustomButton, CustomCard, Pill } from "@/components";
 import "./Home.css";
 import "./Home.desktop.css";
-
-import { MdContentCopy } from "react-icons/md";
+import { FaRegFilePdf } from "react-icons/fa";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
 export default function Home() {
-  const initEggs = () => {
-    return [false, false, false];
-  };
-
-  const [eggFound, setEggFound] = useState(initEggs);
-  const [revealBackground, setRevealBackground] = useState(false);
-  const [revealCode, setRevealCode] = useState(false);
-
   const projects = [
     {
       title: "portfolio",
@@ -81,7 +72,6 @@ export default function Home() {
         "Immersion dans un nouvel environnement culturel. Cette expérience a renforcé mon adaptabilité, mon ouverture d'esprit et mon autonomie.",
       icon: "🦘",
       thumbnail: "australia.jpg",
-      tags: ["adaptabilité", "autonomie", "anglais"],
     },
     {
       year: "2019",
@@ -90,7 +80,6 @@ export default function Home() {
         "Défi sportif en. Un voyage de plusieurs semaines qui m’a appris la persévérance, la discipline et la gestion de l'imprévu.",
       icon: "🚴‍♂️",
       thumbnail: "biketrip.jpg",
-      tags: ["endurance", "persévérance", "adaptabilité"],
     },
     {
       year: "2021–2022",
@@ -99,7 +88,6 @@ export default function Home() {
         "Objectifs atteints grâce à une préparation rigoureuse. Ces épreuves ont consolidé ma rigueur, ma constance et ma capacité mentale à aller jusqu’au bout.",
       icon: "🏃",
       thumbnail: "marathon.jpg",
-      tags: ["rigueur", "constance", "discipline"],
     },
     {
       year: "2023",
@@ -108,110 +96,27 @@ export default function Home() {
         "Un engagement fort vers une nouvelle voie professionnelle. Ce choix témoigne de ma motivation, de ma capacité à me réinventer et de ma volonté d'apprendre.",
       icon: "🎓",
       thumbnail: "university.jpg",
-      tags: ["motivation", "réinvention", "apprentissage"],
     },
   ];
-
-  const easterEggs = [
-    {
-      id: "b513a2c",
-      title: "Background",
-      message:
-        "Bonjour et bienvenue sur mon portfolio !\n\nPour rendre l'expérience plus immersive, j'y ai ajouté quelques easter eggs.\n\nFélicitation vous avez trouvé le premier 🥚 ! Vous devriez remarquer que quelque chose a changé...\n\nLa lumière vous donnera le prochain indice...\n\nÀ vous de jouer !\n\n🔦\n\nPS: si vous êtes sur mobile ou tablette, le tactile est votre ami.",
-      action: function () {
-        alert(this.message);
-        setRevealBackground(true);
-        setEggFound([true, false, false]);
-      },
-    },
-
-    {
-      id: "9a96933",
-      title: "Octocat",
-      message:
-        "Bravo, vous avez trouvé le deuxième easter egg ! Vous avez l'oeil 👀.\n\nIl y a un CODE caché quelque part sur cette page, il vous mènera au dernier 🥚 ...\n\nÀ vous de jouer !\n\nUn indice : c'est le moment de faire un petit tour sur Github 😉 !",
-      action: function () {
-        alert(this.message);
-        setEggFound([true, true, false]);
-      },
-    },
-    {
-      id: "09aabfd",
-      title: "Code",
-      action: function () {
-        setEggFound([true, true, true]);
-        setRevealCode(true);
-      },
-    },
-  ];
-
-  // useEffect(() => {
-  //   let targetX = 0;
-  //   let targetY = 0;
-  //   let currentX = 0;
-  //   let currentY = 0;
-
-  //   const speed = 0.05;
-
-  //   const update = () => {
-  //     currentX += (targetX - currentX) * speed;
-  //     currentY += (targetY - currentY) * speed;
-
-  //     document.documentElement.style.setProperty("--mouse-x", `${currentX}px`);
-  //     document.documentElement.style.setProperty("--mouse-y", `${currentY}px`);
-
-  //     requestAnimationFrame(update);
-  //   };
-
-  //   const handleMouseMove = (e: { pageX: number; pageY: number }) => {
-  //     targetX = e.pageX;
-  //     targetY = e.pageY;
-  //   };
-
-  //   if (revealBackground) {
-  //     document.addEventListener("mousemove", handleMouseMove);
-  //     update();
-  //   }
-
-  //   return () => {
-  //     document.removeEventListener("mousemove", handleMouseMove);
-  //   };
-  // }, [revealBackground]);
-
-  const handleEasterEgg = (e: any) => {
-    e.preventDefault();
-    console.log("Found an easter egg !");
-    console.log(e.target.id);
-    const easterEgg = easterEggs.find((egg) => egg.id === e.target.id);
-    if (easterEgg) {
-      easterEgg.action();
-    }
-  };
-
-  // A extraire dans un composant
-  const [isCopied, setIsCopied] = useState(false);
-  const handleCopyTooltip = () => {
-    setIsCopied(true);
-    setTimeout(() => {
-      setIsCopied(false);
-    }, 2000);
-  };
 
   return (
     <>
       <header className="header">
+        <Pill
+          icon={FaRegFilePdf}
+          buttonIcon={MdKeyboardArrowDown}
+          text="Télécharger CV"
+          href="/maxime-chasles-cv-2025.pdf"
+          download
+        ></Pill>
         <div className="header__hero">
           <div className="header__hero-blur" />
 
           <h1 className="header_title">Développeur Web en devenir</h1>
           <p className="header_description">
-            Moi c’est{" "}
-            <em id="b513a2c" onClick={handleEasterEgg}>
-              Maxime
-            </em>
-            , étudiant en informatique à La Rochelle Université. Ancien barman
-            passionné par l’art du service, je me réinvente aujourd’hui dans le
-            développement Web.
+            Moi c’est <em>Maxime</em>, étudiant en informatique à La Rochelle
+            Université. Ancien barman passionné par l’art du service, je me
+            réinvente aujourd’hui dans le développement Web.
           </p>
           <div className="header__cta-container">
             <CustomButton
@@ -220,10 +125,6 @@ export default function Home() {
               text="À propos"
               thumbnail="portrait.jpeg"
             />
-            <p className="header__tag">
-              <span className="circle-sonar"></span>
-              #opentowork
-            </p>
           </div>
         </div>
       </header>
@@ -234,7 +135,7 @@ export default function Home() {
             <p className="showcase__description">
               Une sélection parmi mes projets personnels et académiques.
             </p>
-            <div className="separator" />
+            {/* <div className="separator" /> */}
           </div>
           <div className="showcase__projects">
             {projects.map((project, index) => (
@@ -252,31 +153,14 @@ export default function Home() {
         </section>
         <section className="madskills">
           <h2 className="madskills__header">
-            Beyond the{" "}
-            <code
-              className="madskills__code"
-              id="09aabfd"
-              onClick={eggFound[1] ? handleEasterEgg : undefined}
-            >
-              {revealCode ? "9a96933" : "code"}
-            </code>
-            {eggFound[2] && (
-              <MdContentCopy
-                className="madskills__copy"
-                onClick={() => {
-                  navigator.clipboard.writeText("9a96933");
-                  handleCopyTooltip();
-                }}
-              />
-            )}
-            {isCopied && <span className="madskills__tooltip">Copié !</span>}
+            Beyond the <code className="madskills__code">code</code>
           </h2>
           <p className="madskills__description">
             Certaines expériences personnelles ont fortement contribué à
             façonner mes qualités humaines et professionnelles. Voici quelques
             exemples significatifs.
           </p>
-          <div className="separator" />
+          {/* <div className="separator" /> */}
 
           <div className="madskills__events">
             {events.map((event, index) => (
@@ -286,7 +170,6 @@ export default function Home() {
                 description={event.description}
                 thumbnail={event.thumbnail}
                 date={event.year}
-                tags={event.tags}
               />
             ))}
           </div>

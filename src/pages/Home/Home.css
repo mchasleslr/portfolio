@@ -49,6 +49,7 @@
   font-style: normal;
   font-weight: var(--font-weight-normal);
   line-height: 150%;
+  margin-bottom: 2rem;
 }
 
 .header__cta-container {
@@ -57,17 +58,6 @@
   align-items: center;
   justify-content: space-between;
   gap: 4rem;
-}
-
-.header__tag {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 1.25rem;
-  font-family: var(--font-primary);
-  color: var(--color-text-800);
-  cursor: default;
 }
 
 .madskills__header {

@@ -2,6 +2,7 @@ import React from "react";
 import { IconType } from "react-icons";
 
 import "./Pill.css";
+import "./Pill.desktop.css";
 
 type PillProps = {
   text?: string;

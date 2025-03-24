@@ -4,7 +4,7 @@ import { IconType } from "react-icons";
 
 export type IconsListItem = {
   title?: string;
-  url: string;
+  url?: string;
   icon: IconType;
   id?: string;
 };
