@@ -1,9 +1,8 @@
 import { Footer, Navigation } from "@/components";
 import { Outlet } from "react-router-dom";
 
-import { FaFileAlt, FaGithub, FaGitlab, FaLinkedinIn } from "react-icons/fa";
+import { FaGithub, FaGitlab, FaLinkedinIn } from "react-icons/fa";
 import { IoPersonCircleSharp } from "react-icons/io5";
-import { RiContactsBook2Line } from "react-icons/ri";
 import { IoMdMail } from "react-icons/io";
 
 import "./Layout.css";
@@ -15,16 +14,16 @@ const menu = [
     url: "/about",
     icon: IoPersonCircleSharp,
   },
-  {
-    title: "Projets",
-    url: "/projects",
-    icon: FaFileAlt,
-  },
-  {
-    title: "Contact",
-    url: "/contact",
-    icon: RiContactsBook2Line,
-  },
+  // {
+  //   title: "Projets",
+  //   url: "/projects",
+  //   icon: FaFileAlt,
+  // },
+  // {
+  //   title: "Contact",
+  //   url: "/contact",
+  //   icon: RiContactsBook2Line,
+  // },
 ];
 const socials = [
   {

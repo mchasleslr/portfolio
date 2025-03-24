@@ -23,13 +23,14 @@
     justify-content: center;
   }
 
-  .about__section {
+  .about__section,
+  .skills,
+  .soft-skills {
     grid-column: 2 / 2;
     padding: 0 5rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    height: 100dvh;
   }
 
   .about__me {
@@ -109,7 +110,7 @@
   }
 
   .about__description {
-    padding-block: 4rem;
+    padding-block: 1rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -121,5 +122,43 @@
     text-align: justify;
     font-size: 2.25rem;
     font-weight: 400;
+  }
+
+  .skills__header,
+  .soft-skills__header {
+    font-size: 4rem;
+  }
+
+  .skill {
+    margin-bottom: 2rem;
+  }
+
+  .skill__header {
+    font-size: 3rem;
+    margin-top: 0;
+  }
+
+  .skill__description {
+    font-size: 2rem;
+  }
+
+  .skill__icons {
+    gap: 1.25rem;
+  }
+
+  .skill__icons svg {
+    font-size: 4.75rem;
+  }
+
+  .soft-skills__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding-block: 2rem;
+  }
+
+  .soft-skills__tag {
+    font-family: var(--font-code);
   }
 }

@@ -9,7 +9,7 @@ export default function Home() {
     {
       title: "portfolio",
       description:
-        "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+        "Mon portfolio personnel, un site Web pour présenter mes projets, mes compétences et mon parcours.",
       date: "2025",
       tags: ["typescript", "react"],
       status: "wip",
@@ -24,7 +24,7 @@ export default function Home() {
     {
       title: "triomino-lib",
       description:
-        "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+        "Un projet dans le cadre de mes études, une bibliothèque pour manipuler des triominos en C.",
       date: "2024-2025",
       tags: ["c", "cmake"],
       status: "wip",
@@ -38,7 +38,7 @@ export default function Home() {
     {
       title: "mydeliciousdinner",
       description:
-        "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+        "SPA pour parcourir des recettes de cuisine et les consulter en détail.",
       date: "2024",
       tags: ["javascript", "react", "tailwindcss"],
       status: "completed",
@@ -52,7 +52,7 @@ export default function Home() {
     {
       title: "ecovoit",
       description:
-        "lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+        "Projet réalisé en groupe dans le cadre de mes études, une application mobile de covoiturage.",
       date: "2024",
       tags: ["typescript", "react", "tailwindcss"],
       status: "completed",
@@ -67,33 +67,33 @@ export default function Home() {
   const events = [
     {
       year: "2016",
-      title: "Australia",
+      title: "Australie",
       description:
-        "Immersion dans un nouvel environnement culturel. Cette expérience a renforcé mon adaptabilité, mon ouverture d'esprit et mon autonomie.",
+        "Un voyage qui m’a permis de découvrir une nouvelle culture, de m’ouvrir aux autres et de développer mon sens de l’adaptation.",
       icon: "🦘",
       thumbnail: "australia.jpg",
     },
     {
       year: "2019",
-      title: "From LR to Corsica",
+      title: "2500 km à vélo",
       description:
-        "Défi sportif en. Un voyage de plusieurs semaines qui m’a appris la persévérance, la discipline et la gestion de l'imprévu.",
+        "Défi sportif en solitaire. Un voyage de plusieurs semaines qui m’a appris la persévérance, la discipline et la gestion de l'imprévu.",
       icon: "🚴‍♂️",
       thumbnail: "biketrip.jpg",
     },
     {
       year: "2021–2022",
-      title: "42.195 Km",
+      title: "Marathon de La Rochelle",
       description:
-        "Objectifs atteints grâce à une préparation rigoureuse. Ces épreuves ont consolidé ma rigueur, ma constance et ma capacité mentale à aller jusqu’au bout.",
+        "Un challenge personnel qui m’a permis de repousser mes limites, de me dépasser et de renforcer ma détermination.",
       icon: "🏃",
       thumbnail: "marathon.jpg",
     },
     {
       year: "2023",
-      title: "Back to school",
+      title: "Retour aux études",
       description:
-        "Un engagement fort vers une nouvelle voie professionnelle. Ce choix témoigne de ma motivation, de ma capacité à me réinventer et de ma volonté d'apprendre.",
+        "Après plusieurs années d’expérience professionnelle, j’ai décidé de reprendre mes études pour me former à un nouveau métier.",
       icon: "🎓",
       thumbnail: "university.jpg",
     },
@@ -106,7 +106,7 @@ export default function Home() {
           icon={FaRegFilePdf}
           buttonIcon={MdKeyboardArrowDown}
           text="Télécharger CV"
-          href="/maxime-chasles-cv-2025.pdf"
+          href="/maxime-chasles-2025.pdf"
           download
         ></Pill>
         <div className="header__hero">
@@ -135,7 +135,6 @@ export default function Home() {
             <p className="showcase__description">
               Une sélection parmi mes projets personnels et académiques.
             </p>
-            {/* <div className="separator" /> */}
           </div>
           <div className="showcase__projects">
             {projects.map((project, index) => (
@@ -160,7 +159,6 @@ export default function Home() {
             façonner mes qualités humaines et professionnelles. Voici quelques
             exemples significatifs.
           </p>
-          {/* <div className="separator" /> */}
 
           <div className="madskills__events">
             {events.map((event, index) => (

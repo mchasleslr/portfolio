@@ -1,5 +1,6 @@
 import React from "react";
 import "./CustomButton.css";
+import "./CustomButton.desktop.css";
 import { IconType } from "react-icons";
 import { Link } from "react-router-dom";
 

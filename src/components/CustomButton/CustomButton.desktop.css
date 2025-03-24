@@ -1,0 +1,16 @@
+@media screen and (min-width: 1024px) {
+  .custom-btn .custom-btn__wrapper {
+    gap: 1.25rem;
+  }
+
+  .custom-btn__thumbnail {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+  }
+
+  .custom-btn__text {
+    font-size: 1.75rem;
+    margin-right: 1.5rem;
+  }
+}
