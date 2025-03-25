@@ -34,7 +34,6 @@
 .about__section {
   display: flex;
   flex-direction: column;
-  padding: 0rem;
 }
 
 .about__me {
@@ -127,7 +126,6 @@
   color: var(--color-text-900);
   font-size: 1.75rem;
   font-weight: 400;
-  text-align: justify;
   margin-block: 1.75rem;
 }
 
@@ -162,7 +160,6 @@
   color: var(--color-text-900);
   font-size: 1.5rem;
   font-weight: 300;
-  text-align: justify;
 }
 
 .skill__icons {

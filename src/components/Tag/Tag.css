@@ -11,5 +11,5 @@
   );
   backdrop-filter: blur(1px);
   color: var(--color-text);
-  font-family: var(--font-code);
+  font-family: var(--font-primary);
 }

@@ -2,7 +2,7 @@ import { CustomButton, CustomCard, Pill } from "@/components";
 import "./Home.css";
 import "./Home.desktop.css";
 import { FaRegFilePdf } from "react-icons/fa";
-import { MdKeyboardArrowDown } from "react-icons/md";
+import { MdOutlineFileDownload } from "react-icons/md";
 
 export default function Home() {
   const projects = [
@@ -104,14 +104,12 @@ export default function Home() {
       <header className="header">
         <Pill
           icon={FaRegFilePdf}
-          buttonIcon={MdKeyboardArrowDown}
+          buttonIcon={MdOutlineFileDownload}
           text="Télécharger CV"
           href="/maxime-chasles-2025.pdf"
           download
         ></Pill>
         <div className="header__hero">
-          <div className="header__hero-blur" />
-
           <h1 className="header_title">Développeur Web en devenir</h1>
           <p className="header_description">
             Moi c’est <em>Maxime</em>, étudiant en informatique à La Rochelle

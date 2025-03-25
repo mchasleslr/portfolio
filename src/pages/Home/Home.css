@@ -1,8 +1,9 @@
-.header__hero {
-  position: relative;
+.header {
+  margin-bottom: 3rem;
 }
 
 .header_title {
+  font-size: 5rem;
   line-height: 120%;
   letter-spacing: -2.25px;
   margin-bottom: 2rem;
@@ -17,10 +18,9 @@
 }
 
 .header_description {
-  position: relative;
   color: var(--color-text-700);
   font-family: var(--font-primary);
-  font-size: 1.75rem;
+  font-size: 2rem;
   font-style: normal;
   font-weight: var(--font-weight-normal);
   line-height: 150%;
@@ -38,14 +38,15 @@
 .showcase__header,
 .madskills__header {
   line-height: 115%;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 3.25rem;
 }
 
 .showcase__description,
 .madskills__description {
   color: var(--color-text-700);
   font-family: var(--font-primary);
-  font-size: 1.25rem;
+  font-size: 1.75rem;
   font-style: normal;
   font-weight: var(--font-weight-normal);
   line-height: 150%;

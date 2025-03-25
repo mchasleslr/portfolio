@@ -103,13 +103,24 @@ export default function About() {
           <h1 className="about__name">Maxime Chasles </h1>
           <h2 className="about__role">Développeur</h2>
           <div className="about__links">
-            <Touchable icon={FaGithub} text="GitHub" className="about__link" />
+            <Touchable
+              icon={FaGithub}
+              text="GitHub"
+              className="about__link"
+              href="https://github.com/mchasleslr"
+            />
             <Touchable
               icon={FaLinkedin}
               text="LinkedIn"
               className="about__link"
+              href="https://www.linkedin.com/in/maxime-chasles-bb102328a/"
             />
-            <Touchable icon={FaMailBulk} text="Email" className="about__link" />
+            <Touchable
+              icon={FaMailBulk}
+              text="Email"
+              className="about__link"
+              href="mailto:mchasles@etudiant.univ-lr.fr"
+            />
           </div>
           <div className="about__description">
             <p className="about__description-intro">

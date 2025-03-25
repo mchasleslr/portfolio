@@ -17,9 +17,6 @@
   --mouse-y: 50%;
   --bg-effect-radius: 100dvh;
 
-  --bg-concrete: url("/concrete-wall-2.png");
-  --bg-skulls: url("/skulls.png");
-  --bg-noisy-gradient: url("/noisy-gradient.jpg");
   --bg-colorful-gradient: url("/colorful-gradient.jpg");
 
   --color-primary-100: rgb(0, 0, 0, 0.1);
@@ -151,11 +148,11 @@ header {
   flex-direction: column;
   justify-content: space-between;
   align-items: start;
-  padding: 2rem 0;
+  margin-bottom: 4.5rem;
 }
 
 section {
-  padding: 2rem 0;
+  margin-bottom: 4.5rem;
 }
 
 h1 {

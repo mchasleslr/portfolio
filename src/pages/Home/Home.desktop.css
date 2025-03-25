@@ -48,10 +48,4 @@
     line-height: 150%;
     z-index: 1000;
   }
-
-  .octocat,
-  .octocat--invisible {
-    width: 130px;
-    height: 130px;
-  }
 }
